@@ -1,0 +1,129 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    padding: 0 10px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.title {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    font-family: inherit;
+    width: 100%;
+    display: inline-block;
+    resize: none;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: rgb(248, 134, 59);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.comments-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comments-list li {
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 14px 24px;
+    position: relative;
+}
+
+.comment-author {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 14px;
+}
+
+.comment-del {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 38px;
+    height: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.comment-del svg {
+    pointer-events: none;
+}
+
+.comment-del:hover {
+    opacity: 1;
+}
+
+.comment-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+
+.comment-like {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.comment-like svg {
+    pointer-events: none;
+}
+
+.comment-like-active svg {
+    fill: #ff0000;
+}
+
+.comment-like:hover {
+    opacity: 1;
+}
