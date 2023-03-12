@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+.none {
+    display: none !important;
+}
+
 .wrapper {
     padding: 0 10px;
     max-width: 1024px;

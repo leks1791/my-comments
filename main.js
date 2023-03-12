@@ -2,9 +2,25 @@ const form = document.querySelector('#comment-form'),
     commentName = form.querySelector('#comment-name'),
     commentText = form.querySelector('#comment-text'),
     commentDate = form.querySelector('#comment-date'),
-    commentsList = document.querySelector('#comments-list');
+    commentsList = document.querySelector('#comments-list'),
+    emptyList = document.querySelector('#empty-comment');
 
 form.addEventListener('submit', addComment);
+
+//Удаление комментария и добавление лайка
+
+commentsList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('comment-del')) {
+        event.target.closest('li').remove();
+    } else if (event.target.classList.contains('comment-like')) {
+        event.target.classList.toggle('comment-like-active');
+    }
+    //если комментариев нет показать блок "Список комментариев пуст"
+
+    if (commentsList.children.length === 1) {
+        emptyList.classList.remove('none')
+    }
+});
 
 function addComment(event) {
     event.preventDefault();
@@ -13,7 +29,6 @@ function addComment(event) {
     const text = commentText.value.trim();
     const date = commentDate.valueAsNumber || new Date();
 
-    
     const li = document.createElement('li');
 
     li.innerHTML = `
@@ -41,6 +56,12 @@ function addComment(event) {
     commentName.value = '';
     commentText.value = '';
     commentDate.value = '';
+
+    //если есть комментарии скрываем блок "Список комментариев пуст"
+
+    if (commentsList.children.length > 1) {
+        emptyList.classList.add('none')
+    }
 }
 
 function formatDate(milliseconds) {
@@ -54,14 +75,3 @@ function formatDate(milliseconds) {
         return date.toLocaleDateString('ru-RU');
     }
 }
-
-//Удаление комментария и добавление лайка
-
-commentsList.addEventListener('click', (event) => {
-    if (event.target.classList.contains('comment-del')) {
-        event.target.closest('li').remove();
-    } else if (event.target.classList.contains('comment-like')) {
-        event.target.classList.toggle('comment-like-active');
-    }
-});
-
