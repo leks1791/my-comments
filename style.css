@@ -22,9 +22,9 @@ body {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="date"],
-textarea {
+.comment-name-input,
+.comment-date-input,
+.comment-text-input {
     font-family: inherit;
     width: 100%;
     display: inline-block;
@@ -36,7 +36,21 @@ textarea {
     padding: 5px;
     box-sizing: border-box;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.error {
+    border-color: red;
+    background-color: rgb(255, 217, 217);
+}
+
+.error-message {
+    color: red;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
 }
 
 input[type="submit"] {
@@ -46,7 +60,9 @@ input[type="submit"] {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    margin-top: 5px;
     margin-bottom: 5px;
+    display: inline-block;
 }
 
 input[type="submit"]:hover {
